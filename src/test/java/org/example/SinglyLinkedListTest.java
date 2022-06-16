@@ -167,34 +167,6 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    void peek() {
-        Assertions.assertEquals(1, list.peek());
-    }
-
-    @Test
-    void element() {
-        Assertions.assertEquals(1, list.element());
-    }
-
-    @Test
-    void poll_ifNotNull() {
-        Assertions.assertEquals(1, list.poll());
-    }
-
-    @Test
-    void poll_ifNull() {
-        list.clear();
-        Assertions.assertNull(list.poll());
-    }
-
-    @Test
-    void remove() {
-        list.remove();
-        List<Integer> expected = new ArrayList<>(Arrays.asList(2, 3, 4, 5));
-        Assertions.assertIterableEquals(expected, list);
-    }
-
-    @Test
     void iterator_next_dataExists() {
         Assertions.assertEquals(1, list.iterator().next());
     }
