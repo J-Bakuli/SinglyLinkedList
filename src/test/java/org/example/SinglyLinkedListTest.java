@@ -63,7 +63,7 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    void addByIndex_checkAbsentIndex() {
+    void addByIndex_toReturnIndexOutOfBoundException_whenCheckAbsentIndex() {
         assertThrows(IndexOutOfBoundsException.class, () -> list.addByIndex(99, 33));
     }
 
@@ -114,12 +114,12 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    void removeObject_absentData() {
+    void removeObject_toReturnNoSuchElementException_whenSuchDataIsAbsent() {
         assertThrows(NoSuchElementException.class, () -> list.removeObject(34));
     }
 
     @Test
-    void removeObject_emptyList() {
+    void removeObject_toReturnNoSuchElementException_whenListIsEmpty() {
         list.clear();
         assertThrows(NoSuchElementException.class, () -> list.removeObject(5));
     }
@@ -130,28 +130,28 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    void isEmpty_whenNotEmpty() {
+    void isEmpty_toReturnFalse_whenListIsNotEmpty() {
         Assertions.assertFalse(list.isEmpty());
     }
 
     @Test
-    void isEmpty_whenEmpty() {
+    void isEmpty_toReturnTrue_whenListIsEmpty() {
         list.clear();
         Assertions.assertTrue(list.isEmpty());
     }
 
     @Test
-    void contains_whenHasData() {
+    void contains_toReturnTrue_whenListHasSuchData() {
         Assertions.assertTrue(list.contains(2));
     }
 
     @Test
-    void contains_whenHasNoSuchData() {
+    void contains_toReturnFalse_whenListHasNoSuchData() {
         Assertions.assertFalse(list.contains(786));
     }
 
     @Test
-    void clear() {
+    void clear_toReturnTrue_whenListIsEmptyAfterClearing() {
         list.clear();
         Assertions.assertTrue(list.isEmpty());
     }
@@ -162,7 +162,7 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    void get_whenIndexIsOutOfBoundaries() {
+    void get_toReturnIndexOutOfBoundsException_whenIndexIsOutOfBoundaries() {
         assertThrows(IndexOutOfBoundsException.class, () -> list.get(99));
     }
 
@@ -172,13 +172,13 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    void iterator_next_absentData() {
+    void iterator_next_toReturnNoSuchElementException_whenAbsentData() {
         list.clear();
         assertThrows(NoSuchElementException.class, () -> list.iterator().next());
     }
 
     @Test
-    void iterator_hasNext_dataExists() {
+    void iterator_hasNext_toReturnTrue_whenDataExists() {
         Assertions.assertTrue(list.iterator().hasNext());
     }
 }

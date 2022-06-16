@@ -37,23 +37,23 @@ class MaxDataUtilTest {
     }
 
     @Test
-    void getMaxData_checkMaxNumberIsZero() {
+    void getMaxData_toReturnIllegalArgumentException_whenCheckMaxNumberIsZero() {
         assertThrows(IllegalArgumentException.class, () -> MaxDataUtil.getMaxData(list, 0));
     }
 
     @Test
-    void getMaxData_checkNullListData() {
+    void getMaxData_toReturnIllegalArgumentException_whenCheckNullListData() {
         list.clear();
         assertThrows(IllegalArgumentException.class, () -> MaxDataUtil.getMaxData(list, 3));
     }
 
     @Test
-    void getMaxData_checkMaxNumberWithinBoundaries_greaterNumber() {
+    void getMaxData_toReturnIllegalArgumentException_whenMaxNumberIsOutOfSizeBoundaries() {
         assertThrows(IllegalArgumentException.class, () -> MaxDataUtil.getMaxData(list, 1222));
     }
 
     @Test
-    void getMaxData_checkMaxNumberWithinBoundaries_negativeNumber() {
+    void getMaxData_toReturnIllegalArgumentException_whenMaxNumberIsNegative() {
         assertThrows(IllegalArgumentException.class, () -> MaxDataUtil.getMaxData(list, -14));
     }
 }
