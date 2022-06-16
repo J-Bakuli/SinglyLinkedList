@@ -63,7 +63,7 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    void addByIndex_toReturnIndexOutOfBoundException_whenCheckAbsentIndex() {
+    void addByIndex_toThrowIndexOutOfBoundException_whenCheckAbsentIndex() {
         assertThrows(IndexOutOfBoundsException.class, () -> list.addByIndex(99, 33));
     }
 
@@ -114,12 +114,12 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    void removeObject_toReturnNoSuchElementException_whenSuchDataIsAbsent() {
+    void removeObject_toThrowNoSuchElementException_whenSuchDataIsAbsent() {
         assertThrows(NoSuchElementException.class, () -> list.removeObject(34));
     }
 
     @Test
-    void removeObject_toReturnNoSuchElementException_whenListIsEmpty() {
+    void removeObject_toThrowNoSuchElementException_whenListIsEmpty() {
         list.clear();
         assertThrows(NoSuchElementException.class, () -> list.removeObject(5));
     }
@@ -162,7 +162,7 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    void get_toReturnIndexOutOfBoundsException_whenIndexIsOutOfBoundaries() {
+    void get_toThrowIndexOutOfBoundsException_whenIndexIsOutOfBoundaries() {
         assertThrows(IndexOutOfBoundsException.class, () -> list.get(99));
     }
 
@@ -172,7 +172,7 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    void iterator_next_toReturnNoSuchElementException_whenAbsentData() {
+    void iterator_next_toThrowNoSuchElementException_whenAbsentData() {
         list.clear();
         assertThrows(NoSuchElementException.class, () -> list.iterator().next());
     }
