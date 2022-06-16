@@ -1,10 +1,9 @@
 package org.example;
 
-import java.util.AbstractList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class SinglyLinkedList<E> extends AbstractList<E> implements Iterable<E>, java.io.Serializable {
+public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
     private static final String NULL_DATA_EXCEPTION = "Data should not be null";
     private static final String ABSENT_ELEMENT_EXCEPTION = "Element is absent";
     private static final String EMPTY_LIST = "The list is empty";
@@ -63,7 +62,7 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Iterable<E>,
     }
 
     /**
-     * Gets the first data from the list
+     * Gets the last data from the list
      * returns the last list data
      * throws NoSuchElementException if the last element is null
      */
@@ -250,7 +249,6 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Iterable<E>,
      * Get the size of the list
      * param int size
      */
-    @Override
     public int size() {
         return size;
     }
@@ -259,7 +257,6 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Iterable<E>,
      * Checks if the list is empty
      * returns a boolean value
      */
-    @Override
     public boolean isEmpty() {
         return first == null;
     }
@@ -268,7 +265,6 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Iterable<E>,
      * Checks if the list contains the data
      * returns a boolean value
      */
-    @Override
     public boolean contains(Object o) {
         return indexOf(o) != -1;
     }
@@ -276,7 +272,6 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Iterable<E>,
     /**
      * Removes the data from the list
      */
-    @Override
     public void clear() {
         for (Link<E> x = first; x != null; ) {
             Link<E> next = x.getNext();
@@ -295,7 +290,6 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Iterable<E>,
      * param int index
      * returns E data
      */
-    @Override
     public E get(int index) {
         checkElementIndex(index);
         return node(index).getData();
@@ -342,42 +336,6 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Iterable<E>,
         } else {
             return last;
         }
-    }
-
-    //Queue operations
-
-    /**
-     * Gets the first element from the list
-     * returns E data
-     */
-    public E peek() {
-        final Link<E> f = first;
-        return (f == null) ? null : f.getData();
-    }
-
-    /**
-     * Gets the first element from the list
-     * returns E data
-     */
-    public E element() {
-        return getFirst();
-    }
-
-    /**
-     * Gets the first element from the list
-     * returns E data
-     */
-    public E poll() {
-        final Link<E> f = first;
-        return (f == null) ? null : unlinkFirst(f);
-    }
-
-    /**
-     * Removes the first element from the list
-     * returns E data
-     */
-    public E remove() {
-        return removeFirst();
     }
 
     //Iterator operations
