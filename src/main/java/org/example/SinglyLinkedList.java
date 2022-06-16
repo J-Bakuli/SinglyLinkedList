@@ -13,8 +13,8 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Private method for unlinking the first element. It is used in some methods below for removing data
-     * param the first element in the form of Link</E>
-     * returns the first data of the list
+     * @param f element in the form of Link</E>
+     * @returns the first data of the list
      */
     private E unlinkFirst(Link<E> f) {
         final E data = f.getData();
@@ -31,8 +31,8 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Private method for unlinking the last element. It is used in some methods below for removing data
-     * param the last element in the form of Link</E>
-     * returns the first data of the list
+     * @param l as the last element in the form of Link</E>
+     * @returns the first data of the list
      */
     private E unlinkLast(Link<E> l) {
         final E data = l.getData();
@@ -50,8 +50,8 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Gets the first data from the list
-     * returns the first list data
-     * throws NoSuchElementException if the first element is null
+     * @returns the first list data in E form
+     * @throws NoSuchElementException if the first element is null
      */
     public E getFirst() {
         final Link<E> f = first;
@@ -63,8 +63,8 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Gets the last data from the list
-     * returns the last list data
-     * throws NoSuchElementException if the last element is null
+     * @returns the last list data in E form
+     * @throws NoSuchElementException if the last element is null
      */
     public E getLast() {
         final Link<E> l = last;
@@ -74,7 +74,7 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Adds the first data to the list
-     * param - E value
+     * @param value in E form
      */
     public void addFirst(E value) {
         Link<E> e = new Link<>();
@@ -91,7 +91,7 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Adds the last data to the list
-     * param - E value
+     * @param value in E form
      */
     public void addLast(E value) {
         Link<E> e = new Link<>();
@@ -107,7 +107,7 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Prints the list
-     * throws NoSuchElementException if the list if empty
+     * @throws NoSuchElementException if the list is empty
      */
     public void printList() {
         if (!isEmpty()) {
@@ -123,8 +123,8 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Adds value to the index position within the list
-     * params - int index, E value
-     * throws NoSuchElementException if the list is empty
+     * @params index in int form, value in E form
+     * @throws NoSuchElementException if the list is empty
      */
     public void addByIndex(int index, E value) {
         Link<E> temp = first;
@@ -152,8 +152,8 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Gets the index of Object e from the list
-     * params - Object e
-     * returns int index or -1 if there is no Object e in the list
+     * @param e in Object form
+     * @returns int index or -1 if there is no Object e in the list
      */
     public int indexOf(Object e) {
         int index = 0;
@@ -173,8 +173,8 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Gets the first element data while removing it
-     * returns the first element data
-     * throws NoSuchElementException if the first data is null
+     * @returns the first element data in E form
+     * @throws NoSuchElementException if the first data is null
      */
     public E removeFirst() {
         final Link<E> f = first;
@@ -186,8 +186,8 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Gets the last element data while removing it
-     * returns the last element data
-     * throws NoSuchElementException if the last data is null
+     * @returns the last element data in E form
+     * @throws NoSuchElementException if the last data is null
      */
     public E removeLast() {
         final Link<E> l = last;
@@ -199,8 +199,8 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Removes the element value from the list
-     * param E value
-     * throws NoSuchElementException if the data is null, if it is absent in the list or if the list is empty
+     * @param data in E form
+     * @throws NoSuchElementException if the data is null, if it is absent in the list or if the list is empty
      */
     public void removeObject(E data) {
         final Link<E> f = first;
@@ -247,7 +247,7 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Get the size of the list
-     * param int size
+     * @returns size in int form
      */
     public int size() {
         return size;
@@ -255,7 +255,7 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Checks if the list is empty
-     * returns a boolean value
+     * @returns a boolean value of whether the list is empty
      */
     public boolean isEmpty() {
         return first == null;
@@ -263,7 +263,7 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Checks if the list contains the data
-     * returns a boolean value
+     * @returns a boolean value of whether the list contains Object o
      */
     public boolean contains(Object o) {
         return indexOf(o) != -1;
@@ -287,8 +287,8 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Gets the data by the index
-     * param int index
-     * returns E data
+     * @param index in int form
+     * @returns data in E form
      */
     public E get(int index) {
         checkElementIndex(index);
@@ -297,8 +297,8 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Checks if the index is within the boundaries of list size
-     * param int index
-     * returns a boolean value
+     * @param index in int form
+     * @returns a boolean value
      */
     private boolean isElementIndex(int index) {
         return index >= 0 && index < size;
@@ -306,8 +306,8 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Provides a message with int index and int size data
-     * param int index
-     * returns a String message
+     * @param index in int form
+     * @returns a String message
      */
     private String outOfBoundsMsg(int index) {
         return "Index: " + index + ", Size: " + size;
@@ -315,8 +315,8 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Checks element index to be within the boundaries of list size
-     * param int index
-     * throws IndexOutOfBoundException
+     * @param index in int form
+     * @throws IndexOutOfBoundsException in case index is not within the list size
      */
     private void checkElementIndex(int index) {
         if (!isElementIndex(index)) throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
@@ -324,8 +324,8 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Gets Link<E> from int index data
-     * param int index
-     * returns Link<E>
+     * @param index in int form
+     * @returns Link<E>
      */
     private Link<E> node(int index) {
         if (index < (size >> 1)) {
@@ -342,7 +342,7 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Gets iterator which allows to work with hasNext() and next() methods
-     * returns new SinglyListIterator in the form of Iterator<E>
+     * @returns new SinglyListIterator in the form of Iterator<E>
      */
     @Override
     public Iterator<E> iterator() {
@@ -351,19 +351,27 @@ public class SinglyLinkedList<E> implements Iterable<E>, java.io.Serializable {
 
     /**
      * Private class for SinglyListIterator with Iterator<E> implemented with hasNext() and next() methods
-     * returns new SinglyListIterator in the form of Iterator<E>
-     * throws NoSuchElementException in next() method in case the required element is absent
+     * @returns new SinglyListIterator in the form of Iterator<E>
      */
     private class SinglyListIterator implements Iterator<E> {
         int size = size();
         int index = 0;
         Link<E> currentLink = first;
 
+        /**
+         * Returns boolean of whether the next elements exists
+         * @returns boolean
+         */
         @Override
         public boolean hasNext() {
             return (index < size);
         }
 
+        /**
+         * Returns next value if it exists
+         * @returns E of next value
+         * @throws NoSuchElementException in case the element is absent
+         */
         @Override
         public E next() {
             if (!hasNext()) {
